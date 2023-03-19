@@ -75,32 +75,44 @@ def task_3():
     print ('Задача 20')
     emptiness()
 
-    one_point_array = ['A', 'E', 'I', 'O','U', 'L', 'N,' 'S', 'T', 'R' ,'А', 'В', 'Е', 'И', 'Н', 'О', 'Р', 'С', 'Т' ]
-    two_poin_array = ['D', 'G','Д', 'К', 'Л', 'М', 'П', 'У' ]
-    three_poit_array = ['B', 'C', 'M', 'P', 'Б', 'Г', 'Ё', 'Ь', 'Я']
-    five_poit_array = ['K', 'Ж', 'З', 'Х', 'Ц', 'Ч']
-    egtht_poit_array = ['J', 'X', 'Ш', 'Э', 'Ю']
-    ten_poit_array = ['Q', 'Z', 'Ф', 'Щ', 'Ъ']
-    enter_word = input('Введите слово: ')
-    count = 0
+    # one_point_array = ['A', 'E', 'I', 'O','U', 'L', 'N,' 'S', 'T', 'R' ,'А', 'В', 'Е', 'И', 'Н', 'О', 'Р', 'С', 'Т' ]
+    # two_poin_array = ['D', 'G','Д', 'К', 'Л', 'М', 'П', 'У' ]
+    # three_poit_array = ['B', 'C', 'M', 'P', 'Б', 'Г', 'Ё', 'Ь', 'Я']
+    # five_poit_array = ['K', 'Ж', 'З', 'Х', 'Ц', 'Ч']
+    # egtht_poit_array = ['J', 'X', 'Ш', 'Э', 'Ю']
+    # ten_poit_array = ['Q', 'Z', 'Ф', 'Щ', 'Ъ']
+    enter_word = input('Ведите слово: ').upper()
+    # count = 0
 
-    for i in range(len(enter_word)):
-        if str.upper(enter_word[i]) in one_point_array:
-            count +=1
-        if str.upper(enter_word[i])in two_poin_array:
-            count +=2
-        if str.upper(enter_word[i]) in three_poit_array:
-            count +=3
-        if str.upper(enter_word[i]) in five_poit_array:
-            count +=5
-        if str.upper(enter_word[i]) in egtht_poit_array:
-            count +=8
-        if str.upper(enter_word[i]) in ten_poit_array:
-            count +=10
-    print(f'Вы получили {count}')
+    # for i in range(len(enter_word)):
+    #     if str.upper(enter_word[i]) in one_point_array:
+    #         count +=1
+    #     if str.upper(enter_word[i])in two_poin_array:
+    #         count +=2
+    #     if str.upper(enter_word[i]) in three_poit_array:
+    #         count +=3
+    #     if str.upper(enter_word[i]) in five_poit_array:
+    #         count +=5
+    #     if str.upper(enter_word[i]) in egtht_poit_array:
+    #         count +=8
+    #     if str.upper(enter_word[i]) in ten_poit_array:
+    #         count +=10
+    # print(f'Вы получили {count}')
 
-
-
+    scrable = {1:['A', 'E', 'I', 'O','U', 'L', 'N,' 'S', 'T', 'R' ,'А', 'В', 'Е', 'И', 'Н', 'О', 'Р', 'С', 'Т'],
+               2:['D', 'G','Д', 'К', 'Л', 'М', 'П', 'У' ],
+                3:['B', 'C', 'M', 'P', 'Б', 'Г', 'Ё', 'Ь', 'Я'],
+                 5:['K', 'Ж', 'З', 'Х', 'Ц', 'Ч'],
+                  8:['J', 'X', 'Ш', 'Э', 'Ю'],
+                   10:['Q', 'Z', 'Ф', 'Щ', 'Ъ']}
+    point = 0
+    for i in enter_word:
+        for j in scrable:
+            if i in scrable[j]:
+                point = point + j
+                
+    print(point)
+        
 def main():
     task_1()
     emptiness()
